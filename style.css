@@ -1,0 +1,134 @@
+html,
+body,
+section,
+div,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a {
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Sen", sans-serif;
+}
+
+:root {
+  --main-bg-color: #721b65;
+  --secondary-bg-color: #b80d57;
+  --primary-text-color: #ffd868;
+  --secondary-text-color: #f8615a;
+}
+
+body {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-bg-color);
+}
+
+.hero h1 {
+  color: var(--primary-text-color);
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+.central-container{
+  text-align: center;
+}
+
+.hero-shadow {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background: var(--main-bg-color);
+}
+
+#shadow-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0);
+  opacity: 0.9;
+  transition: 0.6s opacity;
+}
+
+.hero-shadow h1 {
+  color: var(--secondary-text-color);
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+.hero-shadow p {
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+.top-container {
+  width: 1000px;
+  height: 50px;
+  max-width: 90%;
+  background: var(--secondary-text-color);
+}
+
+.bottom-container {
+  width: 1000px;
+  height: 50px;
+  max-width: 90%;
+  background: var(--secondary-text-color);
+}
+
+#shadow-light-ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(yellow, white);
+  box-shadow: 0px 0px 100px 20px white;
+  filter: blur(2px);
+  opacity: 0.8;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1000;
+  transition: 0.5s opacity, 0.2s width, 0.2s height;
+  animation: 0.5s pulse infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
